@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import "./GameMasterLandingPage.css";
 import heroImg from './iconlogo.png';
 import SuggestionForm from "./SuggestionForm";
+import { API_BASE_URL } from "../config/config";
 
 export default function GameMasterLandingPage() {
   // Estado para mostrar/ocultar modal
   const [showSuggestionsModal, setShowSuggestionsModal] = useState(false);
   const handleExecute = () => {
-    window.open('http://localhost:3000', '_blank');
+    window.open('http://macl1.dynns.com/masterJuegos', '_blank');
     // o la URL real donde corre la app
   };
 
