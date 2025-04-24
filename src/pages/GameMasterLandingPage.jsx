@@ -7,10 +7,14 @@ import { API_BASE_URL } from "../config/config";
 export default function GameMasterLandingPage() {
   // Estado para mostrar/ocultar modal
   const [showSuggestionsModal, setShowSuggestionsModal] = useState(false);
-  const handleExecute = () => {
-    window.open('http://macl1.dynns.com/masterJuegos', '_blank');
-    // o la URL real donde corre la app
-  };
+// GameMasterLandingPage.jsx
+const handleExecute = () => {
+  // window.location.origin  →  "http://macl1.dyns.com" (o el dominio actual)
+  const baseURL = window.location.origin;
+
+  // Abre http://<dominio-actual>/masterJuegos en una pestaña nueva
+  window.open(`${baseURL}/masterJuegos`, "_blank");
+};
 
   // Funciones para abrir/cerrar el modal
   const openSuggestions = () => setShowSuggestionsModal(true);
