@@ -1,70 +1,143 @@
-# Getting Started with Create React App
+# Game Master - Plataforma de Gestión de Torneos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación web moderna para la gestión y organización de torneos deportivos, con un diseño elegante y funcional.
 
-## Available Scripts
+## 🚀 Características
 
-In the project directory, you can run:
+### Diseño Moderno
+- **Interfaz elegante**: Diseño limpio y profesional con gradientes modernos
+- **Tipografía optimizada**: Uso de la fuente Inter para mejor legibilidad
+- **Animaciones suaves**: Transiciones y efectos visuales mejorados
+- **Responsive design**: Adaptable a todos los dispositivos
+- **Modo oscuro**: Variables CSS para fácil personalización
 
-### `npm start`
+### Funcionalidades
+- **Gestión de torneos**: Organización completa de eventos deportivos
+- **Ranking personalizado**: Sistema de clasificación avanzado
+- **Multi-tipo de eventos**: Soporte para diversos formatos de competencia
+- **Formulario de sugerencias**: Sistema de feedback integrado
+- **Información de contacto**: Modal con datos de contacto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Mejoras Técnicas
+- **Variables CSS**: Sistema de diseño consistente
+- **Animaciones CSS**: Efectos visuales modernos
+- **Accesibilidad**: Navegación por teclado y semántica mejorada
+- **Performance**: Optimización de fuentes y recursos
+- **SEO**: Metadatos optimizados
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🎨 Paleta de Colores
 
-### `npm test`
+```css
+--primary-color: #2563eb      /* Azul principal */
+--secondary-color: #10b981    /* Verde secundario */
+--accent-color: #f59e0b       /* Naranja de acento */
+--bg-primary: #ffffff         /* Fondo principal */
+--bg-secondary: #f8fafc       /* Fondo secundario */
+--text-primary: #1e293b       /* Texto principal */
+--text-secondary: #64748b     /* Texto secundario */
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📱 Responsive Design
 
-### `npm run build`
+La aplicación está optimizada para:
+- **Móviles**: 320px - 768px
+- **Tablets**: 768px - 1024px
+- **Desktop**: 1024px+
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tecnologías Utilizadas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React**: Framework principal
+- **CSS3**: Estilos modernos con variables CSS
+- **Google Fonts**: Tipografía Inter y JetBrains Mono
+- **JavaScript ES6+**: Funcionalidades modernas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Instalación y Uso
 
-### `npm run eject`
+1. **Clonar el repositorio**
+   ```bash
+   git clone [url-del-repositorio]
+   cd game-master-landing
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Instalar dependencias**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Ejecutar en desarrollo**
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Construir para producción**
+   ```bash
+   npm run build
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📁 Estructura del Proyecto
 
-## Learn More
+```
+src/
+├── components/          # Componentes reutilizables
+├── pages/              # Páginas principales
+│   ├── GameMasterLandingPage.jsx
+│   ├── GameMasterLandingPage.css
+│   └── SuggestionForm.jsx
+├── config/             # Configuración
+│   └── config.js
+├── App.js              # Componente principal
+├── index.js            # Punto de entrada
+└── index.css           # Estilos globales
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎯 Características de Diseño
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Hero Section
+- Gradiente moderno con efectos de superposición
+- Animaciones de entrada escalonadas
+- Botón con efecto de brillo al hover
 
-### Code Splitting
+### Features Section
+- Cards con hover effects
+- Grid responsive automático
+- Iconos y tipografía mejorada
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Testimonials
+- Diseño de cards con citas
+- Efectos de hover suaves
+- Layout responsive
 
-### Analyzing the Bundle Size
+### Formulario de Sugerencias
+- Validación en tiempo real
+- Estados de carga y éxito/error
+- Diseño moderno con focus states
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Modales
+- Backdrop con blur effect
+- Animaciones de entrada/salida
+- Cierre con Escape key
 
-### Making a Progressive Web App
+## 🔧 Configuración
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Variables de Entorno
+```env
+REACT_APP_API_BASE_URL=http://localhost:3000
+```
 
-### Advanced Configuration
+### Personalización de Colores
+Edita las variables CSS en `src/index.css` para cambiar la paleta de colores.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📞 Contacto
 
-### Deployment
+- **Teléfono**: 653 537 499
+- **Email**: lippkef@micronetca.com
+- **Contacto**: Francisco Lippke
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 Licencia
 
-### `npm run build` fails to minify
+© 2025 Game Master. Todos los derechos reservados.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+**Versión**: 1.0.0
+**Última actualización**: Enero 2025
