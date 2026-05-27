@@ -53,7 +53,7 @@ export default function SuggestionForm() {
       <form onSubmit={handleSubmit} className="suggestion-form">
         <div className="form-header">
           <h3>¡Danos tus sugerencias!</h3>
-          <p>Tu opinión nos ayuda a mejorar Game Master</p>
+          <p>Tu opinión nos ayuda a mejorar MiPartido</p>
         </div>
 
         <div className="form-group">

@@ -1,0 +1,67 @@
+.porque-section {
+  background: var(--bg-primary);
+}
+
+.porque-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.porque-card {
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0, 43, 73, 0.08);
+  background: var(--bg-primary);
+  transition: var(--transition-normal);
+}
+
+.porque-card:hover {
+  border-color: rgba(255, 107, 0, 0.3);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.porque-card__icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 43, 73, 0.06);
+  border-radius: var(--border-radius);
+  color: var(--brand-navy);
+  margin-bottom: var(--spacing-md);
+}
+
+.porque-card__icon .feature-icon-svg {
+  display: flex;
+}
+
+.porque-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.porque-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .porque-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .porque-grid {
+    grid-template-columns: 1fr;
+  }
+}

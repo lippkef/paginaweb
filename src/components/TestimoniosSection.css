@@ -1,0 +1,104 @@
+.testimonios-section {
+  background: var(--bg-secondary);
+}
+
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonio-card {
+  background: var(--bg-primary);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0, 43, 73, 0.06);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonios-stars {
+  color: #f59e0b;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: var(--spacing-md);
+}
+
+.testimonio-card__quote {
+  flex: 1;
+  margin: 0 0 var(--spacing-lg);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  font-style: normal;
+}
+
+.testimonio-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.testimonio-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-navy), var(--brand-orange));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.testimonio-card__name {
+  margin: 0;
+  font-weight: 700;
+  color: var(--brand-navy);
+  font-size: 0.95rem;
+}
+
+.testimonio-card__role {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.testimonios-actions {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+.testimonios-suggest {
+  border: 2px solid var(--brand-navy);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+@media (max-width: 900px) {
+  .testimonios-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonios-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    max-width: 100%;
+  }
+
+  .testimonio-card {
+    min-width: 300px;
+    scroll-snap-align: center;
+  }
+}
