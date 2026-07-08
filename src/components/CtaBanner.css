@@ -25,6 +25,13 @@
   line-height: 1.6;
 }
 
+.cta-banner__pricing {
+  margin-top: var(--spacing-md) !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--brand-lime) !important;
+}
+
 .cta-banner__btn {
   flex-shrink: 0;
   white-space: nowrap;

@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import { API_BASE_URL } from "../config/config";
+import React, { useState } from 'react';
+import { getSuggestionsApiUrl } from '../config/config';
+import './SuggestionForm.css';
 
-export default function SuggestionForm() {
+export default function SuggestionForm({ onClose }) {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,34 +22,43 @@ export default function SuggestionForm() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setErrorMessage('');
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/sugerencias`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+      const response = await fetch(getSuggestionsApiUrl(), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      
+
       if (!response.ok) {
-        throw new Error("Error al enviar sugerencias");
+        const errBody = await response.json().catch(() => ({}));
+        const msg =
+          errBody.message ||
+          (errBody.errors && Object.values(errBody.errors).flat().join(' ')) ||
+          'Error al enviar la sugerencia';
+        throw new Error(msg);
       }
-      
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      
-      // Limpiar el estado después de 3 segundos
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+
       setTimeout(() => {
         setSubmitStatus(null);
-      }, 3000);
-      
+        if (onClose) onClose();
+      }, 2500);
     } catch (err) {
-      setSubmitStatus("error");
-      console.error("Error:", err);
+      setSubmitStatus('error');
+      setErrorMessage(err.message || 'Hubo un error al enviar tu sugerencia. Por favor, intenta nuevamente.');
+      console.error('Error:', err);
     } finally {
       setIsSubmitting(false);
     }
   };
-  
+
   return (
     <div className="suggestion-form-container">
       <form onSubmit={handleSubmit} className="suggestion-form">
@@ -57,10 +68,10 @@ export default function SuggestionForm() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="name">Nombre completo</label>
+          <label htmlFor="suggestion-name">Nombre completo</label>
           <input
             type="text"
-            id="name"
+            id="suggestion-name"
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -71,10 +82,10 @@ export default function SuggestionForm() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">Correo electrónico</label>
+          <label htmlFor="suggestion-email">Correo electrónico</label>
           <input
             type="email"
-            id="email"
+            id="suggestion-email"
             name="email"
             value={formData.email}
             onChange={handleChange}
@@ -85,9 +96,9 @@ export default function SuggestionForm() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="message">Mensaje / Sugerencias</label>
+          <label htmlFor="suggestion-message">Mensaje / Sugerencias</label>
           <textarea
-            id="message"
+            id="suggestion-message"
             name="message"
             rows="5"
             value={formData.message}
@@ -98,32 +109,33 @@ export default function SuggestionForm() {
           />
         </div>
 
-        {submitStatus === "success" && (
-          <div className="success-message">
-            <span className="success-icon">✓</span>
+        {submitStatus === 'success' && (
+          <div className="success-message" role="status">
+            <span className="success-icon" aria-hidden="true">
+              ✓
+            </span>
             ¡Gracias por tus sugerencias! Las revisaremos pronto.
           </div>
         )}
 
-        {submitStatus === "error" && (
-          <div className="error-message">
-            <span className="error-icon">✗</span>
-            Hubo un error al enviar tu sugerencia. Por favor, intenta nuevamente.
+        {submitStatus === 'error' && (
+          <div className="error-message" role="alert">
+            <span className="error-icon" aria-hidden="true">
+              ✗
+            </span>
+            {errorMessage ||
+              'Hubo un error al enviar tu sugerencia. Por favor, intenta nuevamente.'}
           </div>
         )}
 
-        <button 
-          type="submit" 
-          className="suggestions-button"
-          disabled={isSubmitting}
-        >
+        <button type="submit" className="suggestions-button" disabled={isSubmitting}>
           {isSubmitting ? (
             <>
-              <span className="loading-spinner"></span>
+              <span className="loading-spinner" aria-hidden="true" />
               Enviando...
             </>
           ) : (
-            "Enviar sugerencia"
+            'Enviar sugerencia'
           )}
         </button>
       </form>

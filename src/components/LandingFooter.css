@@ -29,10 +29,19 @@
 }
 
 .landing-footer__tagline {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 var(--spacing-sm);
+  color: var(--brand-lime);
+  max-width: 280px;
+}
+
+.landing-footer__desc {
+  font-size: 0.85rem;
   line-height: 1.6;
   margin: 0;
-  opacity: 0.8;
+  opacity: 0.75;
   max-width: 280px;
 }
 
@@ -74,6 +83,22 @@
 
 .landing-footer__whatsapp {
   color: #25d366 !important;
+}
+
+.landing-footer__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #fff !important;
+  background: linear-gradient(135deg, #8a3ab9 0%, #e1306c 55%, #f77737 100%);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem !important;
+  font-weight: 600;
+}
+
+.landing-footer__instagram svg {
+  width: 14px;
+  height: 14px;
 }
 
 .landing-footer__col--contact {

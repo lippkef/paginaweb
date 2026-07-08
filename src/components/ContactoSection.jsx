@@ -3,18 +3,17 @@ import { APP_CONFIG } from '../config/config';
 import './ContactoSection.css';
 
 const WHATSAPP_MESSAGE =
-  'Hola, me gustaría registrar mi centro deportivo en MiPartido.';
+  'Hola, me gustaría solicitar una demo de MiPartido para mi club deportivo.';
 
 export default function ContactoSection() {
   return (
     <section className="contacto-section landing-section" id="contacto">
       <header className="contacto-section__header">
-        <span className="contacto-section__badge">Registro de centros</span>
-        <h2 className="landing-section__title">Contacto y registro</h2>
+        <span className="contacto-section__badge">Demo personalizada</span>
+        <h2 className="landing-section__title">{APP_CONFIG.pricing.title}</h2>
         <p className="contacto-section__intro">
-          Para registrar tu centro deportivo, contacta con nuestro equipo.
-          Puedes llamar, escribir por correo o contactar por{' '}
-          <strong>WhatsApp</strong> en los números indicados (+34).
+          {APP_CONFIG.pricing.subtitle} Contacta con nuestro equipo por teléfono,
+          correo o <strong>WhatsApp</strong> (+34).
         </p>
       </header>
 

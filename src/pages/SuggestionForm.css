@@ -1,0 +1,119 @@
+.suggestion-form-container {
+  width: 100%;
+}
+
+.suggestion-form .form-header {
+  margin-bottom: var(--spacing-xl);
+  padding-right: 2.5rem;
+}
+
+.suggestion-form .form-header h3 {
+  margin: 0 0 var(--spacing-sm);
+  font-size: 1.5rem;
+  color: var(--brand-navy);
+}
+
+.suggestion-form .form-header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.suggestion-form .form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.suggestion-form label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--brand-navy);
+  margin-bottom: var(--spacing-sm);
+}
+
+.suggestion-form .form-input,
+.suggestion-form .form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 43, 73, 0.15);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.suggestion-form .form-input:focus,
+.suggestion-form .form-textarea:focus {
+  outline: none;
+  border-color: var(--brand-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+.suggestion-form .form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.suggestions-button {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 0.875rem 1.5rem;
+  background: var(--brand-orange);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.suggestions-button:hover:not(:disabled) {
+  background: var(--brand-orange-dark);
+}
+
+.suggestions-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.success-message,
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  font-size: 0.9rem;
+}
+
+.success-message {
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+}
+
+.loading-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: suggestionSpin 0.7s linear infinite;
+}
+
+@keyframes suggestionSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

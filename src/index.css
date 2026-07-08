@@ -4,6 +4,8 @@
   --brand-orange: #FF6B00;
   --brand-orange-dark: #e55f00;
   --brand-lime: #D4E157;
+  --brand-teal: #3a9b8a;
+  --brand-teal-dark: #2d7a6c;
   --brand-muted: #64748b;
 
   /* Colores principales (alias) */
@@ -218,6 +220,15 @@ code {
 .btn-primary:hover {
   background: var(--brand-orange-dark);
   transform: translateY(-2px);
+}
+
+.btn-primary--teal {
+  background: var(--brand-teal);
+  box-shadow: 0 4px 14px rgba(58, 155, 138, 0.4);
+}
+
+.btn-primary--teal:hover {
+  background: var(--brand-teal-dark);
 }
 
 .btn-secondary {

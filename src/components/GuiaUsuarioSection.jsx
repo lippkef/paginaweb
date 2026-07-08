@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { APP_CONFIG } from '../config/config';
+import { APP_CONFIG, getPublicAssetUrl } from '../config/config';
 import './GuiaUsuarioSection.css';
 
 export default function GuiaUsuarioSection() {
@@ -7,7 +7,7 @@ export default function GuiaUsuarioSection() {
   const appUrl = typeof window !== 'undefined'
     ? `${window.location.origin}${appPath}`
     : APP_CONFIG.appUrl;
-  const pdfUrl = `${process.env.PUBLIC_URL || ''}${manualPdf}`;
+  const pdfUrl = getPublicAssetUrl(manualPdf.replace(/^\//, ''));
 
   return (
     <section className="guia-section landing-section" id="guia-usuario">

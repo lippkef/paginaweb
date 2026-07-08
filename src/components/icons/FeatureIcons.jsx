@@ -43,6 +43,38 @@ const icons = {
       <path d="M18 20V10M12 20V4M6 20v-6" />
     </svg>
   ),
+  search: (
+    <svg viewBox="0 0 24 24" {...iconProps}>
+      <circle cx="11" cy="11" r="8" />
+      <path d="M21 21l-4.35-4.35" />
+    </svg>
+  ),
+  list: (
+    <svg viewBox="0 0 24 24" {...iconProps}>
+      <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+    </svg>
+  ),
+  challenge: (
+    <svg viewBox="0 0 24 24" {...iconProps}>
+      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+    </svg>
+  ),
+  bell: (
+    <svg viewBox="0 0 24 24" {...iconProps}>
+      <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
+    </svg>
+  ),
+  calendar: (
+    <svg viewBox="0 0 24 24" {...iconProps}>
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <path d="M16 2v4M8 2v4M3 10h18" />
+    </svg>
+  ),
+  check: (
+    <svg viewBox="0 0 24 24" {...iconProps}>
+      <path d="M20 6L9 17l-5-5" />
+    </svg>
+  ),
 };
 
 export function FeatureIcon({ name }) {

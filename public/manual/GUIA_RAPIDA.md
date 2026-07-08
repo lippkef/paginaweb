@@ -1,8 +1,8 @@
-# Guía rápida — Master Juegos
+# Guía rápida — MiPartido
 
 ## Acceso
 
-- **Aplicación:** http://mac11.dynns.com/masterJuegos  
+- **Aplicación:** http://mac11.dynns.com/MiPartido  
 - **Registro:** use el enlace de su centro → `/register?center_id=N`  
 - **Manual completo (PDF):** descargable desde la web de Game Master  
 
