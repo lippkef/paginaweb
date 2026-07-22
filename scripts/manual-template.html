@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manual de usuario — MiPartido</title>
+  <style>
+    @page { margin: 16mm 14mm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #1a2b3c;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .cover {
+      text-align: center;
+      padding: 22mm 0 10mm;
+      page-break-after: always;
+    }
+    .cover img.logo { width: 120px; height: auto; margin-bottom: 16px; }
+    .cover h1 { color: #002B49; font-size: 26pt; margin: 0 0 8px; }
+    .cover .tagline { color: #FF6B00; font-size: 12pt; margin-bottom: 18px; }
+    .cover .meta { color: #555; font-size: 10pt; }
+    .toc { page-break-after: always; }
+    .toc ol { margin: 8px 0 0 22px; }
+    .toc li { margin-bottom: 5px; }
+    h2 {
+      color: #002B49;
+      font-size: 15pt;
+      border-bottom: 2px solid #D4E157;
+      padding-bottom: 4px;
+      margin: 20px 0 10px;
+      page-break-after: avoid;
+    }
+    h3 { color: #002B49; font-size: 11.5pt; margin: 12px 0 6px; page-break-after: avoid; }
+    h4 { color: #334; font-size: 10.5pt; margin: 10px 0 4px; }
+    p { margin: 0 0 7px; }
+    ul, ol { margin: 0 0 10px 18px; padding: 0; }
+    li { margin-bottom: 3px; }
+    .highlight {
+      background: #f4f8fb;
+      border-left: 4px solid #FF6B00;
+      padding: 9px 11px;
+      margin: 8px 0 12px;
+    }
+    .tip {
+      background: #eef7ee;
+      border-left: 4px solid #2e7d32;
+      padding: 8px 11px;
+      margin: 8px 0 12px;
+      font-size: 10pt;
+    }
+    .warn {
+      background: #fff8e6;
+      border-left: 4px solid #ef6c00;
+      padding: 8px 11px;
+      margin: 8px 0 12px;
+      font-size: 10pt;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 14px;
+      font-size: 9.5pt;
+    }
+    th, td {
+      border: 1px solid #ccd6e0;
+      padding: 5px 7px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #002B49; color: #fff; }
+    tr:nth-child(even) td { background: #f7f9fc; }
+    .screenshot {
+      width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin: 6px 0 2px;
+      background: #fff;
+    }
+    .screenshot-caption {
+      font-size: 8.5pt;
+      color: #666;
+      font-style: italic;
+      margin: 0 0 12px;
+      text-align: center;
+    }
+    figure { margin: 0 0 12px; page-break-inside: avoid; }
+    .faq dt { font-weight: 700; color: #002B49; margin-top: 7px; }
+    .faq dd { margin: 2px 0 0 0; }
+    .footer-note {
+      margin-top: 20px;
+      padding-top: 8px;
+      border-top: 1px solid #ccd6e0;
+      font-size: 8.5pt;
+      color: #666;
+    }
+    .page-break { page-break-before: always; }
+    a { color: #002B49; }
+    code { font-size: 9.5pt; background: #f0f3f7; padding: 1px 4px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <img class="logo" src="../iconlogo.png" alt="MiPartido" />
+    <h1>Manual de usuario</h1>
+    <p class="tagline">MiPartido — Software de gestión de torneos y eventos para clubes</p>
+    <p>Más pistas ocupadas. Más torneos. Más ingresos.</p>
+    <p class="meta">Versión 1.1 — 17/07/2026</p>
+    <p class="meta" style="margin-top:18px">Para jugadores, organizadores y administradores de centros de pádel y tenis</p>
+  </section>
+
+  <section class="toc">
+    <h2>Índice</h2>
+    <ol>
+      <li>Qué es MiPartido</li>
+      <li>Acceso y registro</li>
+      <li>Inicio de sesión</li>
+      <li>Roles y paneles</li>
+      <li>Guía del jugador</li>
+      <li>Guía del organizador</li>
+      <li>Tipos de evento y reglas de cupos</li>
+      <li>Drops, resultados y ranking</li>
+      <li>Instalar la app (PWA) y Soporte</li>
+      <li>Preguntas frecuentes</li>
+      <li>Problemas frecuentes</li>
+      <li>Contacto</li>
+    </ol>
+  </section>
+
+  <h2>1. Qué es MiPartido</h2>
+  <p>
+    MiPartido es una plataforma web para clubes de pádel y tenis, centros deportivos y organizadores.
+    Centraliza el ciclo completo de un evento: inscripción de jugadores, generación de cuadros (drops),
+    consulta en PDF, registro de ganadores, ranking del centro y avisos a inscritos.
+  </p>
+  <ul>
+    <li><strong>Jugadores:</strong> se registran con el enlace del club, se inscriben, ven el drop y marcan resultados.</li>
+    <li><strong>Organizadores:</strong> crean eventos, generan/editan cuadros, gestionan jugadores y resultados.</li>
+    <li><strong>Administradores:</strong> asignan roles, centros y (si aplica) correo SMTP del club.</li>
+  </ul>
+
+  <h2>2. Acceso y registro</h2>
+  <div class="highlight">
+    <p><strong>Aplicación:</strong> <a href="https://maclusa.com/MiPartido">https://maclusa.com/MiPartido</a></p>
+    <p><strong>Web informativa:</strong> <a href="https://maclusa.com/webMiPartido">https://maclusa.com/webMiPartido</a></p>
+    <p><strong>Login:</strong> /login</p>
+    <p><strong>Registro:</strong> /register?center_id=N — el parámetro <code>center_id</code> es <strong>obligatorio</strong></p>
+  </div>
+  <p>
+    El club te facilita un enlace o un <strong>código QR</strong> (visible en el panel del organizador/admin).
+    Sin <code>center_id</code> no podrás asociarte al centro correcto.
+  </p>
+  <p>
+    El registro público crea siempre una cuenta de <strong>jugador</strong>
+    (nombre, email, contraseña de al menos 8 caracteres).
+    El rol de organizador lo asigna un administrador del centro.
+  </p>
+  <figure>
+    <img class="screenshot" src="screenshots/registro.png" alt="Registro con enlace del centro deportivo" />
+    <figcaption class="screenshot-caption">Registro con enlace o QR del centro deportivo</figcaption>
+  </figure>
+
+  <h2>3. Inicio de sesión</h2>
+  <p>Entra con el correo y la contraseña de tu centro. Si tu usuario pertenece a varios centros, la app te pedirá elegir el centro de trabajo.</p>
+  <figure>
+    <img class="screenshot" src="screenshots/login.png" alt="Pantalla de inicio de sesión" />
+    <figcaption class="screenshot-caption">Pantalla de inicio de sesión (también puedes instalar MiPartido en el móvil)</figcaption>
+  </figure>
+  <div class="tip">
+    <strong>Consejo:</strong> no hay «recuperar contraseña» en la app. Si la olvidas, contacta con el administrador de tu centro.
+  </div>
+
+  <h2 class="page-break">4. Roles y paneles</h2>
+  <h3>4.1 Menú del jugador</h3>
+  <p>Tras el login verás: Calendario eventos, Historial de eventos, Soporte, Mi perfil, Salir e Instalar app.</p>
+  <figure>
+    <img class="screenshot" src="screenshots/panel-jugador.png" alt="Menú del jugador" />
+    <figcaption class="screenshot-caption">Panel jugador: Calendario, Historial, Soporte y Mi perfil</figcaption>
+  </figure>
+
+  <h3>4.2 Menú del organizador</h3>
+  <p>
+    Además del calendario y el perfil: <strong>ADM. eventos</strong>, <strong>ADM. jugadores / rankings</strong>,
+    <strong>Resultados / pistas hora</strong> y Soporte. El rol lo asigna el administrador del centro.
+  </p>
+  <figure>
+    <img class="screenshot" src="screenshots/panel-organizador.png" alt="Menú del organizador" />
+    <figcaption class="screenshot-caption">Panel organizador: administración de eventos, jugadores y resultados</figcaption>
+  </figure>
+
+  <h3>4.3 Comparativa de permisos</h3>
+  <table>
+    <thead>
+      <tr><th>Función</th><th>Jugador</th><th>Organizador</th><th>Admin*</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Calendario / perfil / soporte</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+      <tr><td>Historial de eventos</td><td>Sí</td><td>No**</td><td>No**</td></tr>
+      <tr><td>Inscribirse en eventos</td><td>Sí</td><td>Sí***</td><td>Sí***</td></tr>
+      <tr><td>Crear eventos / generar drop</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+      <tr><td>ADM. jugadores / rankings</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+      <tr><td>Resultados / pistas hora</td><td>Propio partido</td><td>Todos</td><td>Todos</td></tr>
+      <tr><td>Usuarios / centros / SMTP</td><td>No</td><td>SMTP (super_admin)</td><td>Sí</td></tr>
+    </tbody>
+  </table>
+  <p><em>* Admin = super_admin o APP_ADMIN. ** Historial solo si el rol es exactamente «jugador». *** Hace falta ficha de jugador vinculada.</em></p>
+
+  <h2>5. Guía del jugador</h2>
+  <h3>5.1 Inscribirse y jugar</h3>
+  <figure>
+    <img class="screenshot" src="screenshots/eventos-jugador.png" alt="Eventos inscritos y disponibles" />
+    <figcaption class="screenshot-caption">Calendario: eventos inscritos y disponibles</figcaption>
+  </figure>
+  <ol>
+    <li>Regístrate con el enlace/QR de tu centro (<code>?center_id=N</code>).</li>
+    <li>Completa <strong>Mi perfil</strong> (teléfono, país…). El email no es editable.</li>
+    <li>Entra en <strong>Calendario eventos</strong>.</li>
+    <li>Pulsa <strong>UNIRME</strong> si hay plazas. Si ya estás inscrito verás «Ya inscrito»; si no hay cupo, «COMPLETO».</li>
+    <li>Cuando exista el cuadro: <strong>Ver Drop</strong> (PDF) y <strong>Ganador</strong> tras tu partido.</li>
+    <li>Consulta <strong>Historial de eventos</strong> para resultados anteriores.</li>
+  </ol>
+  <table>
+    <thead><tr><th>Acción</th><th>Cuándo</th></tr></thead>
+    <tbody>
+      <tr><td>UNIRME</td><td>Hay plazas y no estás inscrito</td></tr>
+      <tr><td>Ver Drop</td><td>El organizador ya generó el cuadro</td></tr>
+      <tr><td>Ganador</td><td>Juegas en la ronda activa y el evento no está cerrado</td></tr>
+      <tr><td>Retirarse</td><td>Solo si <strong>aún no</strong> se ha generado el drop</td></tr>
+    </tbody>
+  </table>
+  <div class="warn">
+    Si el drop ya existe y necesitas darte de baja, contacta al organizador: la app bloqueará «Retirarse».
+  </div>
+
+  <h2 class="page-break">6. Guía del organizador</h2>
+  <h3>6.1 Flujo recomendado</h3>
+  <ol>
+    <li><strong>ADM. eventos</strong> → Crear evento → elige el tipo.</li>
+    <li>Define nombre, fechas, hora, ubicación, jugadores por partido y máximo de inscritos.</li>
+    <li>Comparte el enlace/QR de registro; espera inscripciones (o inscríbelos desde ADM. jugadores).</li>
+    <li>Pulsa <strong>Generar Drop</strong> cuando el número de inscritos sea válido para el formato.</li>
+    <li>Opcional: <strong>Editar Drop</strong> (arrastrar jugadores entre equipos) — solo si no hay ganadores.</li>
+    <li>Avisa a inscritos (WhatsApp desde la interfaz o Email si el centro tiene SMTP).</li>
+    <li>En <strong>Resultados / Pistas hora</strong>: marca ganador, pista y hora; el torneo/pozo avanza de ronda.</li>
+  </ol>
+
+  <h3>6.2 Pantalla ADM. eventos — botones habituales</h3>
+  <table>
+    <thead><tr><th>Botón</th><th>Uso</th></tr></thead>
+    <tbody>
+      <tr><td>Crear / Editar / Eliminar</td><td>Alta y mantenimiento del evento (solo vigentes por defecto)</td></tr>
+      <tr><td>Generar Drop</td><td>Crea el cuadro; si ya hay drop sin ganadores, se regenera</td></tr>
+      <tr><td>Editar Drop</td><td>Reordenar emparejamientos; bloqueado si ya hay ganadores</td></tr>
+      <tr><td>Ver Drop</td><td>Consulta / PDF del cuadro</td></tr>
+      <tr><td>WhatsApp / Email</td><td>Avisar inscritos (email requiere SMTP del centro)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>6.3 Jugadores, ranking e inscripción asistida</h3>
+  <p>
+    En <strong>ADM. jugadores / rankings</strong> puedes editar fichas, consultar el ranking del centro
+    e inscribir a un jugador en su nombre abriendo el calendario.
+  </p>
+  <div class="tip">
+    El ranking (posición global) se usa como semilla al generar el drop: mayor posición = mejor cabeza de serie.
+  </div>
+
+  <h2>7. Tipos de evento y reglas de cupos</h2>
+  <table>
+    <thead><tr><th>Tipo</th><th>Descripción</th></tr></thead>
+    <tbody>
+      <tr><td>Torneo</td><td>Eliminatoria por rondas (cuadro por semillas)</td></tr>
+      <tr><td>Pozo</td><td>Remezcla de parejas por rondas</td></tr>
+      <tr><td>Partido</td><td>Un solo encuentro / buscar rival</td></tr>
+      <tr><td>Todos C/Todos</td><td>Todos se enfrentan (round-robin)</td></tr>
+      <tr><td>Todos C/Todos top 4</td><td>Round-robin + playoff entre los 4 mejores</td></tr>
+      <tr><td>Todos C/Todos top 2</td><td>Round-robin + final entre los 2 mejores</td></tr>
+    </tbody>
+  </table>
+  <h3>7.1 Cupos</h3>
+  <ul>
+    <li>Jugadores por partido: normalmente entre 2 y 10.</li>
+    <li>Jugadores máximo: hasta 124.</li>
+    <li><strong>Torneo / Pozo / Partido:</strong> el máximo debe ser <strong>múltiplo</strong> de «jugadores por partido» (ej. 4 → 8, 12, 16…).</li>
+    <li><strong>Todos C/Todos (y tops):</strong> basta con que el máximo sea ≥ jugadores por partido.</li>
+  </ul>
+  <div class="warn">
+    Si al generar el drop el número de inscritos no encaja con el formato, la app mostrará un error
+    (por ejemplo: «el número de jugadores no es múltiplo de jugadores por partido»). Ajusta inscritos o el cupo.
+  </div>
+
+  <h2>8. Drops, resultados y ranking</h2>
+  <h3>8.1 Generar y regenerar el drop</h3>
+  <ul>
+    <li>Hace falta al menos un inscrito (en la práctica, los suficientes para formar equipos).</li>
+    <li>Si ya existe un drop <strong>sin</strong> ganadores, se puede regenerar (se sustituye).</li>
+    <li>Si ya hay algún ganador asignado, <strong>no</strong> se puede regenerar ni editar libremente el cuadro.</li>
+  </ul>
+  <h3>8.2 Resultados</h3>
+  <ul>
+    <li>El jugador marca el ganador de <strong>su</strong> partido cuando le corresponde.</li>
+    <li>El organizador puede registrar ganador, pista y hora de todos los partidos en Resultados.</li>
+    <li>Cada victoria suma puntos a los jugadores del equipo ganador; el ranking del centro se actualiza.</li>
+  </ul>
+
+  <h2 class="page-break">9. Instalar la app (PWA) y Soporte</h2>
+  <h3>9.1 Instalar MiPartido</h3>
+  <ul>
+    <li>Botón <strong>Instalar MiPartido</strong> en login y en el panel.</li>
+    <li><strong>Android / Chrome:</strong> instalación nativa si el navegador lo permite.</li>
+    <li><strong>iPhone:</strong> Compartir → Añadir a pantalla de inicio.</li>
+    <li>Puedes usar MiPartido sin instalarlo; para inscripciones y resultados hace falta conexión.</li>
+  </ul>
+  <h3>9.2 Soporte en la app</h3>
+  <p>Menú <strong>Soporte</strong>: preguntas frecuentes. Las observaciones internas son para administradores APP_ADMIN.</p>
+
+  <h2>10. Preguntas frecuentes</h2>
+  <dl class="faq">
+    <dt>¿Cómo registro mi centro?</dt>
+    <dd>Contacta desde <strong>Solicitar demo</strong> en la web de MiPartido.</dd>
+    <dt>¿Quién puede ser organizador?</dt>
+    <dd>El administrador del centro asigna el rol. El registro público solo crea jugadores.</dd>
+    <dt>¿Hay app móvil?</dt>
+    <dd>Sí, como web instalable (PWA): añade MiPartido a la pantalla de inicio.</dd>
+    <dt>¿Puedo cambiar mi email?</dt>
+    <dd>No desde la app. Pide el cambio al administrador del centro.</dd>
+    <dt>¿El email a inscritos es automático?</dt>
+    <dd>Solo si el centro tiene SMTP configurado. WhatsApp se usa desde la interfaz / enlaces; no sustituye al correo del servidor.</dd>
+    <dt>¿Qué pasa si ya hay ganadores y quiero cambiar el cuadro?</dt>
+    <dd>No se puede regenerar ni editar el drop con libertad. Contacta soporte técnico del club si hace falta corregir un resultado.</dd>
+  </dl>
+
+  <h2>11. Problemas frecuentes</h2>
+  <table>
+    <thead><tr><th>Síntoma</th><th>Causa habitual</th><th>Solución</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Registro falla o redirige al login</td>
+        <td>Falta <code>?center_id=N</code></td>
+        <td>Usar el enlace/QR del club</td>
+      </tr>
+      <tr>
+        <td>No veo ADM. eventos</td>
+        <td>Cuenta de jugador</td>
+        <td>Pedir rol organizador al admin</td>
+      </tr>
+      <tr>
+        <td>No puedo retirarme</td>
+        <td>Drop ya generado</td>
+        <td>Contactar al organizador</td>
+      </tr>
+      <tr>
+        <td>Error al generar drop</td>
+        <td>Inscritos insuficientes o cupo incorrecto</td>
+        <td>Revisar múltiplos / tipo de evento</td>
+      </tr>
+      <tr>
+        <td>No puedo editar el drop</td>
+        <td>Ya hay ganadores</td>
+        <td>No regenerar; corregir resultados si aplica</td>
+      </tr>
+      <tr>
+        <td>Email a inscritos falla</td>
+        <td>SMTP del centro no configurado</td>
+        <td>Configurar correo (super_admin / APP_ADMIN)</td>
+      </tr>
+      <tr>
+        <td>«Credenciales incorrectas»</td>
+        <td>Email o contraseña erróneos</td>
+        <td>Reintentar o pedir reset al admin</td>
+      </tr>
+      <tr>
+        <td>Failed to fetch / API</td>
+        <td>Red o servidor no disponible</td>
+        <td>Comprobar conexión; reintentar más tarde</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>12. Contacto</h2>
+  <table>
+    <thead><tr><th>Contacto</th><th>Teléfono</th><th>Email</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Francisco Lippke</td>
+        <td>+34 653 537 499</td>
+        <td>lippkef@micronetca.com</td>
+      </tr>
+      <tr>
+        <td>Ana Caridad del Amo</td>
+        <td>+34 660 516 318</td>
+        <td>anadelamosport@gmail.com</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Demo personalizada: <a href="https://maclusa.com/webMiPartido">https://maclusa.com/webMiPartido</a></p>
+  <p>En la app: menú <strong>Soporte</strong>.</p>
+
+  <p class="footer-note">
+    MiPartido v1.1 — Manual alineado con la app (master-juegos-frontend) y la API (master_juegos_api).
+    Torneos, pozos, partidos, Todos C/Todos, inscripciones, drops, ranking y comunicación con jugadores.
+  </p>
+</body>
+</html>
